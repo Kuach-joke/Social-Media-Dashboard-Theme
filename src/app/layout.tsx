@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { withBasePath } from "@/lib/base-path";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,9 +14,6 @@ export const metadata: Metadata = {
   title: "Social Media Dashboard",
   description:
     "Track follower totals and today's engagement across Facebook, Twitter, Instagram, and YouTube.",
-  icons: {
-    icon: withBasePath("/favicon-32x32.png"),
-  },
 };
 
 export const viewport: Viewport = {

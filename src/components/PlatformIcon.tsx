@@ -1,13 +1,17 @@
 import Image from "next/image";
+// Static imports get the basePath applied by Next; string paths don't.
+import facebookIcon from "../../public/icons/icon-facebook.svg";
+import instagramIcon from "../../public/icons/icon-instagram.svg";
+import twitterIcon from "../../public/icons/icon-twitter.svg";
+import youtubeIcon from "../../public/icons/icon-youtube.svg";
 import { platformNames } from "@/data/dashboard-data";
-import { withBasePath } from "@/lib/base-path";
 import type { Platform } from "@/types/dashboard";
 
 const icons = {
-  facebook: { src: "/icons/icon-facebook.svg", width: 20, height: 20 },
-  twitter: { src: "/icons/icon-twitter.svg", width: 20, height: 17 },
-  instagram: { src: "/icons/icon-instagram.svg", width: 20, height: 20 },
-  youtube: { src: "/icons/icon-youtube.svg", width: 20, height: 20 },
+  facebook: { src: facebookIcon, width: 20, height: 20 },
+  twitter: { src: twitterIcon, width: 20, height: 17 },
+  instagram: { src: instagramIcon, width: 20, height: 20 },
+  youtube: { src: youtubeIcon, width: 20, height: 20 },
 } as const;
 
 type PlatformIconProps = {
@@ -19,7 +23,7 @@ export function PlatformIcon({ platform }: PlatformIconProps) {
 
   return (
     <Image
-      src={withBasePath(icon.src)}
+      src={icon.src}
       alt=""
       width={icon.width}
       height={icon.height}

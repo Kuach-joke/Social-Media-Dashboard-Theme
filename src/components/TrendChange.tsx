@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { withBasePath } from "@/lib/base-path";
+import downIcon from "../../public/icons/icon-down.svg";
+import upIcon from "../../public/icons/icon-up.svg";
 import type { Trend } from "@/types/dashboard";
 
 type TrendChangeProps = {
@@ -20,9 +21,7 @@ export function TrendChange({ change, trend, unit }: TrendChangeProps) {
       }`}
     >
       <Image
-        src={withBasePath(
-          isUp ? "/icons/icon-up.svg" : "/icons/icon-down.svg",
-        )}
+        src={isUp ? upIcon : downIcon}
         alt=""
         width={8}
         height={4}
