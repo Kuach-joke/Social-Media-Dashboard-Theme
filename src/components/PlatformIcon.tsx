@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { platformNames } from "@/data/dashboard-data";
+import { withBasePath } from "@/lib/base-path";
 import type { Platform } from "@/types/dashboard";
 
 const icons = {
@@ -18,7 +19,7 @@ export function PlatformIcon({ platform }: PlatformIconProps) {
 
   return (
     <Image
-      src={icon.src}
+      src={withBasePath(icon.src)}
       alt=""
       width={icon.width}
       height={icon.height}

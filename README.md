@@ -1,4 +1,4 @@
-# Frontend Mentor - Social media dashboard with theme switcher solution
+# || SOCIAL MEDIA DASHBOARD WITH THEME SWITCHER  ||
 
 This is a solution to the [Social media dashboard with theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H).
 It is a responsive social media dashboard with a light and dark theme. It shows a total follower count, four platform cards (Facebook, Twitter, Instagram, YouTube), and an “Overview - Today” grid of engagement stats.
