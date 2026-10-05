@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --pattern: #f7f9ff;
+  --card: #f1f3fa;
+  --card-hover: #e1e4f0;
+  --text-primary: #1d1f29;
+  --text-muted: #63687d;
+  --divider: #848bab;
+  --overview-heading: #63687d;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #1d1f29;
+  --pattern: #20222f;
+  --card: #252b42;
+  --card-hover: #333a55;
+  --text-primary: #ffffff;
+  --text-muted: #aeb3cb;
+  --divider: #333a55;
+  --overview-heading: #ffffff;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-pattern: var(--pattern);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-divider: var(--divider);
+  --color-overview-heading: var(--overview-heading);
+  --color-accent-up: #1eb589;
+  --color-accent-down: #dc414c;
+  --color-facebook: #178ff5;
+  --color-twitter: #1da1f2;
+  --color-youtube: #c4032b;
+  --color-toggle-off: #aeb3cb;
+  --color-knob: #ffffff;
+  --color-focus: #178ff5;
+
+  --background-image-instagram: linear-gradient(
+    180.9deg,
+    #df4896 0%,
+    #ee877e 50.913%,
+    #fdc366 100%
+  );
+  --background-image-toggle-on: linear-gradient(
+    205.64deg,
+    #40db82 0%,
+    #388fe7 98.015%
+  );
+
+  --radius-card: 0.3125rem;
+  --radius-band: 1.25rem;
+
+  --text-title: clamp(1.5rem, 1.261rem + 1.018vw, 1.75rem);
+  --text-title--line-height: 1.25;
+  --text-section: 1.5rem;
+  --text-section--line-height: 1.25;
+  --text-body: 0.875rem;
+  --text-body--line-height: 1.25;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.25;
+  --text-count: clamp(3rem, 0.1rem + 14.5vw, 3.5rem);
+  --text-count--line-height: 0.85;
+  --text-stat: 2rem;
+  --text-stat--line-height: 1.25;
+
+  --tracking-count: -0.125rem;
+  --tracking-label: clamp(0.2rem, 1.35vw, 0.3125rem);
+
+  --spacing-stack: 0.5rem;
+  --spacing-inline: 1rem;
+  --spacing-card: 1.5rem;
+  --spacing-grid: 2rem;
+  --spacing-trend: 2.5rem;
+  --spacing-section: 3rem;
+  --spacing-page: 2.25rem;
+  --spacing-follower: 13.5rem;
+  --spacing-overview: 7.8125rem;
+  --spacing-band: 14.6875rem;
+  --spacing-band-wide: 15.25rem;
+  --spacing-accent: 0.25rem;
+}
+
+@utility page-shell {
+  width: 100%;
+  margin-inline: auto;
+  padding-top: var(--spacing-page);
+  padding-bottom: var(--spacing-section);
+  padding-inline: clamp(1rem, 6.67vw, 1.5625rem);
+
+  @media (width >= 48rem) {
+    padding-inline: max(2rem, calc((100% - 33.875rem) / 2));
+  }
+
+  @media (width >= 64rem) {
+    padding-inline: max(1.5rem, calc((100% - 69.75rem) / 2));
+  }
+}
+
+@layer base {
+  html {
+    background-color: var(--background);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
